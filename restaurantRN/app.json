@@ -1,0 +1,12 @@
+{
+  "name": "restaurantRN",
+  "displayName": "restaurantRN",
+  "expo": {
+    "name": "restaurantRN",
+    "slug": "restaurantRN",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
