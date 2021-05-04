@@ -1,6 +1,7 @@
 // React redux
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 
 // Actions
 import { fetchRestaurants } from "./actions";
@@ -11,7 +12,7 @@ import { getRestaurants } from "./selectors";
 
 // Components
 import { View, Text, StyleSheet, TextInput, FlatList, Button, ActivityIndicator, Alert, Pressable } from "react-native";
-import FastImage from 'react-native-fast-image'
+import Icon from "../../components/Icon";
 
 // Navigation
 import NavigationService from '../../navigation'
@@ -79,14 +80,7 @@ class Home extends Component {
     return (
       <Pressable onPress={()=>this.onItemPress(item.Id)}>
         <View style={styles.itemContainer}>
-          <FastImage
-          style={styles.itemIcon}
-          source={{
-              uri: item.LogoUrl,
-              cache: FastImage.cacheControl.web
-          }}
-          resizeMode={FastImage.resizeMode.contain}
-          />
+          <Icon style={styles.itemIcon} uri={item.LogoUrl}/>
           <View style={styles.itemInfo}>
             <Text>{item.Name}</Text>
             <Text>{rating}</Text>
@@ -137,6 +131,10 @@ class Home extends Component {
   }
 }
 
+Home.propTypes = {
+  restaurantdata: PropTypes.object,
+}
+
 const mapStateToProps = createStructuredSelector({
   restaurantdata: getRestaurants()
 });
@@ -153,6 +151,7 @@ export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Home);
+
 
 const styles = StyleSheet.create({
   container: {

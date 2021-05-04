@@ -1,6 +1,7 @@
 // React
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 
 // Selectors
 import { createStructuredSelector } from "reselect";
@@ -8,10 +9,10 @@ import { getRestaurants, getRestaurantById } from "./selectors";
 
 // Components
 import { View, Text, StyleSheet, TextInput, FlatList, Button, ActivityIndicator, Alert, Modal } from "react-native";
-import FastImage from 'react-native-fast-image'
 
 // Navigation
 import NavigationService from '../../navigation'
+import Icon from "../../components/Icon";
 
 class RestaurantDetails extends Component {
 
@@ -29,14 +30,7 @@ class RestaurantDetails extends Component {
   renderIcon = () => {
     const { restaurant } = this.props
     return (
-      <FastImage
-      style={styles.itemIcon}
-      source={{
-          uri: restaurant.LogoUrl,
-          cache: FastImage.cacheControl.web
-      }}
-      resizeMode={FastImage.resizeMode.contain}
-      />
+      <Icon style={styles.itemIcon} uri={restaurant.LogoUrl}/>
     )
   }
 
@@ -96,6 +90,10 @@ class RestaurantDetails extends Component {
   onButtonClicked = () => {
     NavigationService.goBack()
   }
+}
+
+RestaurantDetails.propTypes = {
+  restaurant: PropTypes.object,
 }
 
 const mapStateToProps = (state, ownProps) => createStructuredSelector({
