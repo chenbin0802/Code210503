@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
 // Selectors
-import restaurantService from "../../crud/modules/Restaurant/RestaurantService";
+import { restaurantService } from "../../crud/modules/Restaurant/RestaurantService";
 
 // Components
 import { View, Text, StyleSheet, TextInput, FlatList, Button, ActivityIndicator, Alert, Pressable } from "react-native";

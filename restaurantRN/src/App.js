@@ -1,29 +1,29 @@
-import React, { Component } from "react";
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from 'react-navigation-stack';
-import Restaurant from './screens/Restaurant/Restaurant';
-import RestaurantDetails from './screens/Restaurant/RestaurantDetails.js';
+import React, { Component } from 'react'
+import { createAppContainer } from 'react-navigation'
+import { createStackNavigator } from 'react-navigation-stack'
+import Restaurant from './screens/Restaurant/Restaurant'
+import RestaurantDetails from './screens/Restaurant/RestaurantDetails.js'
 import NavigationService from './Navigation'
 
 const AppNavigator = createStackNavigator(
   {
-      HomeScreen : Restaurant,
-      RestaurantDetails : RestaurantDetails,
+    HomeScreen: Restaurant,
+    RestaurantDetails: RestaurantDetails
   },
   {
-      initialRouteName: "HomeScreen"
+    initialRouteName: 'HomeScreen'
   }
 )
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator)
 
 class App extends Component {
-  render() {
-    return <AppContainer 
+  render () {
+    return <AppContainer
     ref={navigatorRef => {
-      NavigationService.setTopLevelNavigator(navigatorRef);
+      NavigationService.setTopLevelNavigator(navigatorRef)
     }}
-    />;
+    />
   }
 }
 
-export default App;
+export default App

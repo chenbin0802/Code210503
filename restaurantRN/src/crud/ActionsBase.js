@@ -1,18 +1,18 @@
 import { makeActionType } from './utils/CrudUtils'
 
 const OPERATIONS = {
-  FETCH: 'FETCH',
+  FETCH: 'FETCH'
 }
 
 const STATUS = {
   REQUEST: 'REQUEST', // action was just requested
   WORKING: 'WORKING', // action being in progress
   SUCCESS: 'SUCCESS', // successful completion
-  FAILURE: 'FAILURE', // fatal failure
+  FAILURE: 'FAILURE' // fatal failure
 }
 
 export default class ActionsBase {
-  constructor(key){
+  constructor (key) {
     this.fetch = this.fetch.bind(this)
     this.fetch.type = makeActionType(key, OPERATIONS.FETCH, STATUS.REQUEST)
     this.fetch.typeWorking = makeActionType(key, OPERATIONS.FETCH, STATUS.WORKING)
@@ -20,14 +20,11 @@ export default class ActionsBase {
     this.fetch.typeFailure = makeActionType(key, OPERATIONS.FETCH, STATUS.FAILURE)
   }
 
-
-  fetch(payload) {
+  fetch (payload) {
+    console.debug('fetch function:', payload)
     return {
       type: this.fetch.type,
-      payload : {
-        queryParams
-      }
+      payload
     }
   }
-  
 }

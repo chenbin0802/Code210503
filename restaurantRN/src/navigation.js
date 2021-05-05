@@ -1,28 +1,28 @@
-import { NavigationActions } from 'react-navigation';
+import { NavigationActions } from 'react-navigation'
 
-let _navigator;
+let _navigator
 
-function setTopLevelNavigator(navigatorRef) {
-  _navigator = navigatorRef;
+function setTopLevelNavigator (navigatorRef) {
+  _navigator = navigatorRef
 }
 
-function navigate(routeName, params) {
+function navigate (routeName, params) {
   _navigator.dispatch(
     NavigationActions.navigate({
       routeName,
-      params,
+      params
     })
-  );
+  )
 }
 
-function goBack() {
-    _navigator.dispatch(
-      NavigationActions.back()
-    );
-  }
+function goBack () {
+  _navigator.dispatch(
+    NavigationActions.back()
+  )
+}
 
 export default {
-    navigate,
-    setTopLevelNavigator,
-    goBack,
-  };
+  navigate,
+  setTopLevelNavigator,
+  goBack
+}
