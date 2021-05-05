@@ -1,5 +1,5 @@
-import ActionsBase from "../../ActionsBase";
-import { makeActionType } from '../../utils/CrudUtils'
+import ActionsBase from "crud/ActionsBase";
+import { makeActionType } from 'crud/utils/CrudUtils'
 export default class RestaurantAction extends ActionsBase {
   constructor(key){
     super(key)

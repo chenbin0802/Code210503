@@ -4,14 +4,14 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
 // Selectors
-import { restaurantService } from "../../crud/modules/Restaurant/RestaurantService";
+import { restaurantService } from "crud/modules/Restaurant/RestaurantService";
 
 // Components
 import { View, Text, StyleSheet, Button } from "react-native";
 
 // Navigation
-import NavigationService from '../../Navigation'
-import Icon from "../../components/Icon";
+import NavigationService from 'Navigation'
+import Icon from "components/Icon";
 
 class RestaurantDetails extends Component {
 

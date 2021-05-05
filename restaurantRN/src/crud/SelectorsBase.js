@@ -1,4 +1,3 @@
-
 export default class SelectorBase {
   constructor(key){
     this.key = key

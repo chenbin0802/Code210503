@@ -1,6 +1,6 @@
 /* eslint-disable new-cap */
 import { put, fork, takeLatest } from 'redux-saga/effects'
-import { API_BASE } from '../Constants'
+import { API_BASE } from 'Constants'
 import axios from 'axios'
 
 export default class SeriveBase {

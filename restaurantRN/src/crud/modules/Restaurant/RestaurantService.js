@@ -1,8 +1,8 @@
 
 import { fork, put, takeLatest } from 'redux-saga/effects'
-import RestaurantAction from './RestaurantAction'
-import RestaurantSelector from './RestaurantSelector'
-import SeriveBase from '../../ServiceBase'
+import RestaurantAction from 'crud/modules/Restaurant/RestaurantAction'
+import RestaurantSelector from 'crud/modules/Restaurant/RestaurantSelector'
+import SeriveBase from 'crud/ServiceBase'
 class RestaurantService extends SeriveBase {
   getInitialState () {
     return {

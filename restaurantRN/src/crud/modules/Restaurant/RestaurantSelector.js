@@ -1,4 +1,4 @@
-import SelectorBase from "../../SelectorsBase";
+import SelectorBase from "crud/SelectorsBase";
 import { createSelector } from "reselect";
 
 export default class RestaurantSelector extends SelectorBase {
