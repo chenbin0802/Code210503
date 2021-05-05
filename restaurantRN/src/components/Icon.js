@@ -4,6 +4,14 @@ import PropTypes from 'prop-types';
 
 // Components
 import FastImage from 'react-native-fast-image'
+import { StyleSheet } from "react-native";
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 50,
+    height: 50,
+  },
+})
 
 class Icon extends Component {
 
@@ -34,14 +42,6 @@ Icon.propTypes = {
 Icon.defaultProps = {
   style: styles.icon
 }
-
-const styles = StyleSheet.create({
-  icon: {
-    width: 80,
-    height: 80,
-    margin: 10,
-  },
-})
 
 export default Icon
 

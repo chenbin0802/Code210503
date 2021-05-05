@@ -5,13 +5,13 @@ import PropTypes from 'prop-types';
 
 // Selectors
 import { createStructuredSelector } from "reselect";
-import { getRestaurants, getRestaurantById } from "./selectors";
+import restaurantService from "../../crud/modules/Restaurant/RestaurantService";
 
 // Components
 import { View, Text, StyleSheet, TextInput, FlatList, Button, ActivityIndicator, Alert, Modal } from "react-native";
 
 // Navigation
-import NavigationService from '../../navigation'
+import NavigationService from '../../Navigation'
 import Icon from "../../components/Icon";
 
 class RestaurantDetails extends Component {
@@ -97,7 +97,7 @@ RestaurantDetails.propTypes = {
 }
 
 const mapStateToProps = (state, ownProps) => createStructuredSelector({
-  restaurant: getRestaurantById(ownProps.navigation.getParam('itemId'))
+  restaurant: restaurantService.selectors.getRestaurantById(ownProps.navigation.getParam('itemId'))
 });
 
 export default connect(

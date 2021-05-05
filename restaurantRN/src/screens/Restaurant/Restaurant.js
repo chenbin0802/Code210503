@@ -3,21 +3,18 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
-// Actions
-import { fetchRestaurants } from "./actions";
-
 // Selectors
 import { createStructuredSelector } from "reselect";
-import { getRestaurants } from "./selectors";
+import restaurantService from "../../crud/modules/Restaurant/RestaurantService";
 
 // Components
 import { View, Text, StyleSheet, TextInput, FlatList, Button, ActivityIndicator, Alert, Pressable } from "react-native";
 import Icon from "../../components/Icon";
 
 // Navigation
-import NavigationService from '../../navigation'
+import NavigationService from '../../Navigation'
 
-class Home extends Component {
+class Restaurant extends Component {
   constructor (props) {
     super(props)
     this.searchText = ''
@@ -131,18 +128,18 @@ class Home extends Component {
   }
 }
 
-Home.propTypes = {
+Restaurant.propTypes = {
   restaurantdata: PropTypes.object,
 }
 
 const mapStateToProps = createStructuredSelector({
-  restaurantdata: getRestaurants()
+  restaurantdata: restaurantService.selectors.getRestaurants()
 });
 
 function mapDispatchToProps(dispatch) {
   return {
     searchByPostalCode: data => {
-      dispatch(fetchRestaurants(data));
+      dispatch(restaurantService.actions.fetchRestaurants(data));
     }
   };
 }
@@ -150,7 +147,7 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(Restaurant);
 
 
 const styles = StyleSheet.create({
