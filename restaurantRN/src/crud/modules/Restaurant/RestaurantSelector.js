@@ -13,7 +13,7 @@ export default class RestaurantSelector extends SelectorBase {
       createSelector(
         this.getModuleState,
         (state) => {
-          return state.Restaurants?.find(restaurant=>restaurant.Id === Id)
+          return state?.Restaurants?.find(restaurant=>restaurant.Id === Id)
         }
       )
 }

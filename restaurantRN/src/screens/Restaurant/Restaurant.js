@@ -24,8 +24,8 @@ class Restaurant extends Component {
   }
 
   static getDerivedStateFromProps (props, prevState) {
-    if( prevState.isLoading != props.restaurantdata.isLoading){
-      if(props.restaurantdata.isLoading){
+    if( prevState.isLoading != props.restaurantdata?.isLoading){
+      if(props.restaurantdata?.isLoading){
         return {
           isLoading: true,
         }
@@ -58,8 +58,8 @@ class Restaurant extends Component {
   }
 
   renderButton = () => {
-    const { isLoading } = this.props.restaurantdata
-    if(isLoading){
+    const { restaurantdata } = this.props
+    if(restaurantdata?.isLoading){
       return <ActivityIndicator />
     }else{
       return (<Button
@@ -90,12 +90,12 @@ class Restaurant extends Component {
 
   renderList() {
     const { isLoading } = this.state
-    const { Restaurants } = this.props.restaurantdata
+    const { restaurantdata } = this.props
     if(isLoading){
       return null
     }
     return <FlatList
-      data={Restaurants}
+      data={restaurantdata?.Restaurants}
       renderItem={this.renderItem}
       ListEmptyComponent={this.renderEmptyItem()}
       keyExtractor={(item) => `${item.Id}-${item.Name}`}

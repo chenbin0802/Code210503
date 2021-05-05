@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Icon correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "overflow": "hidden",
+      },
+      Object {
+        "height": 50,
+        "width": 50,
+      },
+    ]
+  }
+>
+  <FastImageView
+    resizeMode="contain"
+    source={
+      Object {
+        "cache": "web",
+        "uri": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/112766.gif",
+      }
+    }
+    style={
+      Object {
+        "bottom": 0,
+        "left": 0,
+        "position": "absolute",
+        "right": 0,
+        "top": 0,
+      }
+    }
+  />
+</View>
+`;

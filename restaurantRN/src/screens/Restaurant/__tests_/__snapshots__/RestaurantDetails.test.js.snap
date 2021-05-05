@@ -1,0 +1,122 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Restaurant Detail correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "stretch",
+      "flex": 1,
+      "flexDirection": "column",
+      "justifyContent": "flex-start",
+      "padding": 10,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "overflow": "hidden",
+        },
+        Object {
+          "height": 80,
+          "margin": 10,
+          "width": 80,
+        },
+      ]
+    }
+  >
+    <FastImageView
+      resizeMode="contain"
+      source={
+        Object {
+          "cache": "web",
+          "uri": "http://d30v2pzvrfyzpo.cloudfront.net/uk/images/restaurants/80086.gif",
+        }
+      }
+      style={
+        Object {
+          "bottom": 0,
+          "left": 0,
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+        }
+      }
+    />
+  </View>
+  <View>
+    <Text>
+      Name:
+  La Venice Pizzeria (Wood Fired)
+    </Text>
+    <Text>
+      Address:
+  242 Old Kent Road, London, SE1 5UB
+    </Text>
+    <Text>
+      Opening:
+  2021-05-06T11:00:00
+    </Text>
+    <Text>
+      Delivery Start:
+  2021-05-05T18:00:00Z
+    </Text>
+    <Text>
+      Estimated Time:
+  35 mins - 50 mins
+    </Text>
+  </View>
+  <View>
+    <Text>
+      Deals:
+    </Text>
+    <View>
+      <Text>
+        10% off when you spend Â£30
+      </Text>
+    </View>
+  </View>
+  <View
+    accessibilityRole="button"
+    accessibilityState={Object {}}
+    accessible={true}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Close
+      </Text>
+    </View>
+  </View>
+</View>
+`;

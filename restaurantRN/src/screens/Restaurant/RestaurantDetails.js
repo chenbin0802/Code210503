@@ -28,9 +28,12 @@ class RestaurantDetails extends Component {
 
   renderIcon = () => {
     const { restaurant } = this.props
-    return (
-      <Icon style={styles.itemIcon} uri={restaurant.LogoUrl}/>
-    )
+    if(restaurant?.LogoUrl){
+      return (
+        <Icon style={styles.itemIcon} uri={restaurant.LogoUrl}/>
+      )
+    }
+    return null
   }
 
   renderButton = () => {
@@ -44,11 +47,11 @@ class RestaurantDetails extends Component {
 
   renderInfo = () => {
     const { restaurant } = this.props
-    const name = `Name:\n  ${restaurant.Name}`
-    const address = `Address:\n  ${restaurant.Address.FirstLine}, ${restaurant.Address.City}, ${restaurant.Address.Postcode}`
-    const opening = `Opening:\n  ${restaurant.OpeningTimeLocal}`
-    const deliveryStart = `Delivery Start:\n  ${restaurant.DeliveryStartTime}`
-    const estimatedTime = `Estimated Time:\n  ${restaurant.DeliveryEtaMinutes.RangeLower} mins - ${restaurant.DeliveryEtaMinutes.RangeUpper} mins`
+    const name = `Name:\n  ${restaurant?.Name}`
+    const address = `Address:\n  ${restaurant?.Address.FirstLine}, ${restaurant?.Address.City}, ${restaurant?.Address.Postcode}`
+    const opening = `Opening:\n  ${restaurant?.OpeningTimeLocal}`
+    const deliveryStart = `Delivery Start:\n  ${restaurant?.DeliveryStartTime}`
+    const estimatedTime = `Estimated Time:\n  ${restaurant?.DeliveryEtaMinutes.RangeLower} mins - ${restaurant?.DeliveryEtaMinutes.RangeUpper} mins`
 
     return (<View>
                     <Text>{name}</Text>
@@ -64,7 +67,7 @@ class RestaurantDetails extends Component {
 
   renderDeals = () => {
     const { restaurant } = this.props
-    if(restaurant.Deals.length > 0) {
+    if(restaurant?.Deals.length > 0) {
       return (
         <View>
           <Text>Deals:</Text>
