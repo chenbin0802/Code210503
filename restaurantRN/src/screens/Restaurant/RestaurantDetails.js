@@ -8,10 +8,11 @@ import { restaurantService } from "crud/modules/Restaurant/RestaurantService";
 
 // Components
 import { View, Text, StyleSheet, Button } from "react-native";
+import Icon from "components/Icon";
 
 // Navigation
 import NavigationService from 'Navigation'
-import Icon from "components/Icon";
+
 
 class RestaurantDetails extends Component {
 

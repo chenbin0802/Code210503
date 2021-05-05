@@ -1,9 +1,12 @@
+// Utils
 import { makeActionType } from 'crud/utils/CrudUtils'
 
+// Operators fetch for now, todo -> create, update , delete
 const OPERATIONS = {
   FETCH: 'FETCH'
 }
 
+// status of operators
 const STATUS = {
   REQUEST: 'REQUEST', // action was just requested
   WORKING: 'WORKING', // action being in progress
@@ -21,7 +24,6 @@ export default class ActionsBase {
   }
 
   fetch (payload) {
-    console.debug('fetch function:', payload)
     return {
       type: this.fetch.type,
       payload

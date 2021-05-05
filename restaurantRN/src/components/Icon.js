@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import FastImage from 'react-native-fast-image'
 import { StyleSheet } from 'react-native'
 
+// styles
 const styles = StyleSheet.create({
   icon: {
     width: 50,

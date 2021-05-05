@@ -1,7 +1,14 @@
 
+// saga
 import { fork, put, takeLatest } from 'redux-saga/effects'
+
+// action
 import RestaurantAction from 'crud/modules/Restaurant/RestaurantAction'
+
+// selector
 import RestaurantSelector from 'crud/modules/Restaurant/RestaurantSelector'
+
+// service vase
 import SeriveBase from 'crud/ServiceBase'
 class RestaurantService extends SeriveBase {
   getInitialState () {

@@ -1,6 +1,9 @@
+// redux
 import { createStore, combineReducers, applyMiddleware } from 'redux'
 import createSagaMiddleware from 'redux-saga'
 import { fork } from 'redux-saga/effects'
+
+// all services
 import { services } from 'store/Services'
 
 const sagaMiddleware = createSagaMiddleware()

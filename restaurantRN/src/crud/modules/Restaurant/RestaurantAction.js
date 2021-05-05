@@ -1,4 +1,7 @@
+// base action
 import ActionsBase from "crud/ActionsBase";
+
+// Utils
 import { makeActionType } from 'crud/utils/CrudUtils'
 export default class RestaurantAction extends ActionsBase {
   constructor(key){

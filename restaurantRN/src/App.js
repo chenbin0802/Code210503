@@ -1,9 +1,15 @@
+// React
 import React, { Component } from 'react'
+
+// Navigation
 import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
+import NavigationService from 'Navigation'
+
+// Screens
 import Restaurant from 'screens/Restaurant/Restaurant'
 import RestaurantDetails from 'screens/Restaurant/RestaurantDetails'
-import NavigationService from 'Navigation'
+
 
 const AppNavigator = createStackNavigator(
   {
