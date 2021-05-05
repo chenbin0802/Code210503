@@ -1,4 +1,4 @@
-import { makeActionType } from './utils/crudUtils'
+import { makeActionType } from './utils/CrudUtils'
 
 const OPERATIONS = {
   FETCH: 'FETCH',

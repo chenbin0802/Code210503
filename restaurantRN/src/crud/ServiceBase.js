@@ -1,4 +1,4 @@
-import { call, put, fork, takeEvery, takeLatest } from 'redux-saga/effects'
+import { put, fork, takeLatest } from 'redux-saga/effects'
 import { API_BASE } from '../Constants'
 import axios from 'axios';
 

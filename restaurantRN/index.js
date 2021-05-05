@@ -6,7 +6,7 @@ import { Provider } from "react-redux";
 
 import App from './src/App';
 import { name as appName } from "./app.json";
-import configureStore from "./src/store/configureStore";
+import configureStore from "./src/store/ConfigureStore";
 
 const store = configureStore();
 const RNRedux = () => (

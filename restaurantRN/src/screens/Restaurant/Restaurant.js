@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import PropTypes from 'prop-types';
 
 // Selectors
-import { createStructuredSelector } from "reselect";
 import restaurantService from "../../crud/modules/Restaurant/RestaurantService";
 
 // Components
