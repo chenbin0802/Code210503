@@ -21,7 +21,7 @@ export default class ActionsBase {
   }
 
 
-  fetch(queryParams) {
+  fetch(payload) {
     return {
       type: this.fetch.type,
       payload : {

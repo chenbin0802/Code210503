@@ -96,9 +96,12 @@ RestaurantDetails.propTypes = {
   restaurant: PropTypes.object,
 }
 
-const mapStateToProps = (state, ownProps) => createStructuredSelector({
-  restaurant: restaurantService.selectors.getRestaurantById(ownProps.navigation.getParam('itemId'))
-});
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    restaurant: restaurantService.selectors.getRestaurantById(ownProps.navigation.getParam('itemId'))(state)
+  }
+}
 
 export default connect(
   mapStateToProps,

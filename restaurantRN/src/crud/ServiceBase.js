@@ -1,14 +1,12 @@
-import { fromJS } from "immutable";
-import { call, put, takeEvery, takeLatest } from 'redux-saga/effects'
+import { call, put, fork, takeEvery, takeLatest } from 'redux-saga/effects'
 import { API_BASE } from '../Constants'
+import axios from 'axios';
 
 export default class SeriveBase {
   constructor (storeKey,actionClass,selectorClass) {
     this.storeKey = storeKey
     this.actions = new actionClass(storeKey)
     this.selectors = new selectorClass(storeKey)
-    console.debug('actions:', this.actions)
-    console.debug('selectors:', this.selectors)
 
     this.reducer = this.reducer.bind(this)
   }
@@ -18,7 +16,6 @@ export default class SeriveBase {
   }
 
   *sagaMain () {
-    // does nothing specific
     yield fork([this, this.watchFetch])
   }
 
@@ -27,16 +24,18 @@ export default class SeriveBase {
   }
 
   *watchFetch () {
-    yield takeLatest(this.actions.fetch.type, this.fetch);
+    yield takeLatest(this.actions.fetch.type, [this, this.fetch]);
   }
 
-  *fetch(data) {
-    const { queryParams } = data
+  *fetch({
+    payload
+  }) {
       yield put({ type: this.actions.fetch.typeWorking });
       try{
-        const result = yield call(() => axios(`${API_BASE}${this.getApiPath()}${queryParams}`))
+        const result = yield axios(`${API_BASE}${this.getApiPath()}${payload}`)
         if(result.status === 200){
-          yield put({ type: this.actions.fetch.typeSuccess, result });
+          const data = result.data
+          yield put({ type: this.actions.fetch.typeSuccess, data });
         }else{
           yield put({ type: this.actions.fetch.typeFailure, err });
         }
@@ -44,8 +43,6 @@ export default class SeriveBase {
       } catch (err){
         yield put({ type: this.actions.fetch.typeFailure, err });
       }
-
-      
   }
 
 
@@ -53,7 +50,10 @@ export default class SeriveBase {
     switch (action.type) {
       case this.actions.fetch.typeSuccess:
       case this.actions.fetch.typeFailure:
-        return state.set(this.storeKey, action.payload)
+        return {
+          ...state,
+          ...action.data,
+        }
     }
     return state
   }

@@ -33,7 +33,7 @@ class Restaurant extends Component {
       }else{
         return {
           isLoading: false,
-          message: props.restaurantdata?.restaurants.Restaurants?.length > 0 ? '' : 'No results found'
+          message: props.restaurantdata?.Restaurants?.length > 0 ? '' : 'No results found'
         }
       }
     }
@@ -91,7 +91,7 @@ class Restaurant extends Component {
 
   renderList() {
     const { isLoading } = this.state
-    const { Restaurants } = this.props.restaurantdata?.restaurants
+    const { Restaurants } = this.props.restaurantdata
     if(isLoading){
       return null
     }
@@ -132,9 +132,14 @@ Restaurant.propTypes = {
   restaurantdata: PropTypes.object,
 }
 
-const mapStateToProps = createStructuredSelector({
-  restaurantdata: restaurantService.selectors.getRestaurants()
-});
+const mapStateToProps = (state) => {
+  return {
+    restaurantdata: restaurantService.selectors.getRestaurants(state)
+  }
+}
+// const mapStateToProps = ({
+//   restaurantdata: restaurantService.selectors.getRestaurants()
+// })
 
 function mapDispatchToProps(dispatch) {
   return {

@@ -1,7 +1,8 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import createSagaMiddleware from "redux-saga";
-import { all } from "redux-saga/effects";
+import { all, fork } from "redux-saga/effects";
 import { services } from './Services'
+import restaurantService from "../crud/modules/Restaurant/RestaurantService";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -26,7 +27,9 @@ export default function configureStore(){
 
     // combine all sagas in a root saga
     function* rootSaga() {
-        yield all(sagas);
+        for( const saga of sagas){
+            yield fork(saga)
+        }
     }
     sagaMiddleware.run(rootSaga);
     return store;

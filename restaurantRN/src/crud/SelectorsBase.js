@@ -4,5 +4,7 @@ export default class SelectorBase {
     this.key = key
   }
 
-  getModuleState = state => state.get(this.key).toJS();
+  getModuleState = state => {
+    return state[this.key];
+  }
 }

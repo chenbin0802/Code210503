@@ -1,6 +1,6 @@
 export function makeActionType (...args) {
   return args
-    .filter((arg) => !arg)
+    .filter((arg) => arg)
     .join('_')
     .toUpperCase()
 }

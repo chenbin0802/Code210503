@@ -2,17 +2,18 @@ import SelectorBase from "../../SelectorsBase";
 import { createSelector } from "reselect";
 
 export default class RestaurantSelector extends SelectorBase {
-   getRestaurants = () =>
-    createSelector(
+   getRestaurants = createSelector(
       this.getModuleState,
-      state => state.toJS()
-    );
+      state => {
+        return state
+      }
+    )
   
    getRestaurantById = (Id) =>
       createSelector(
         this.getModuleState,
-        state => {
-          return state.toJS().Restaurants?.find(restaurant=>restaurant.Id === Id)
+        (state) => {
+          return state.Restaurants?.find(restaurant=>restaurant.Id === Id)
         }
       )
 }

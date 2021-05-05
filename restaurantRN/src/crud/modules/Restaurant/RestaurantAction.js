@@ -9,7 +9,8 @@ export default class RestaurantAction extends ActionsBase {
   fetchRestaurants = (postalCode) => {
     return {
       type: this.fetchRestaurants.type,
-      payload: postalCode,
+      postalCode,
     }
   }
+
 }
