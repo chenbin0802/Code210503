@@ -13,6 +13,9 @@ import Icon from "components/Icon";
 // Navigation
 import NavigationService from 'Navigation'
 
+/**
+ * Restaurant main UI
+ */
 class Restaurant extends Component {
   constructor (props) {
     super(props)
@@ -47,7 +50,7 @@ class Restaurant extends Component {
         {this.renderButton()}
         {this.renderList()}
       </View>
-    );
+    )
   }
 
   renderEmptyItem = () => {
@@ -136,9 +139,6 @@ const mapStateToProps = (state) => {
     restaurantdata: restaurantService.selectors.getRestaurants(state)
   }
 }
-// const mapStateToProps = ({
-//   restaurantdata: restaurantService.selectors.getRestaurants()
-// })
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -154,6 +154,7 @@ export default connect(
 )(Restaurant);
 
 
+// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

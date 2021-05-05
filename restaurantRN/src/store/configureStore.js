@@ -8,15 +8,19 @@ import { services } from 'store/Services'
 
 const sagaMiddleware = createSagaMiddleware()
 
+// Configure Store
 export default function configureStore () {
   // setup
   const sagas = []
   const reducers = {}
   for (const service of services) {
+    
+    // add all sagas
     if (service.sagaMain) {
       sagas.push([service, service.sagaMain])
     }
 
+    // add al reducers
     if (service.reducer) {
       reducers[service.storeKey] = service.reducer
     }

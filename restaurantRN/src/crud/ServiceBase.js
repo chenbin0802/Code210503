@@ -8,6 +8,14 @@ import { API_BASE } from 'Constants'
 // Utils
 import axios from 'axios'
 
+/**
+ * Basic Service of all services
+ * basic interface:
+ * reducer
+ * saga function
+ * actions
+ * selectors
+ */
 export default class SeriveBase {
   constructor (storeKey, actionClass, selectorClass) {
     this.storeKey = storeKey
@@ -17,22 +25,27 @@ export default class SeriveBase {
     this.reducer = this.reducer.bind(this)
   }
 
+  // init state
   getInitialState () {
     throw new Error('Override getInitialState')
   }
 
+  // saga main function
   * sagaMain () {
     yield fork([this, this.watchFetch])
   }
 
+  // module API path
   getApiPath () {
     throw new Error('Override getApiPath and return string')
   }
 
+  // watch fetch action
   * watchFetch () {
     yield takeLatest(this.actions.fetch.type, [this, this.fetch])
   }
 
+  // Get info from API TODO: Move this function to another service
   * fetch ({
     payload
   }) {
@@ -50,6 +63,7 @@ export default class SeriveBase {
     }
   }
 
+  // default reducer, when Success of failure, update state
   reducer (state = this.getInitialState(), action) {
     switch (action.type) {
       case this.actions.fetch.typeSuccess:

@@ -14,6 +14,12 @@ const styles = StyleSheet.create({
   }
 })
 
+/**
+ * Icon Component
+ * Params:
+ *  style: width, height and other custom styles
+ *  uri: Address of image
+ */
 class Icon extends Component {
   render () {
     const { style, uri } = this.props

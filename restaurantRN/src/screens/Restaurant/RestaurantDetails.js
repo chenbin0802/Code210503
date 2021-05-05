@@ -13,7 +13,9 @@ import Icon from "components/Icon";
 // Navigation
 import NavigationService from 'Navigation'
 
-
+/**
+ * Restaurant details
+ */
 class RestaurantDetails extends Component {
 
   render(){
@@ -110,6 +112,7 @@ export default connect(
   mapStateToProps,
 )(RestaurantDetails);
 
+// styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,

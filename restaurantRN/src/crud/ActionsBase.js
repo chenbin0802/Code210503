@@ -13,7 +13,10 @@ const STATUS = {
   SUCCESS: 'SUCCESS', // successful completion
   FAILURE: 'FAILURE' // fatal failure
 }
-
+/**
+ * Actions base for all actions
+ * provide fetch action and status
+ */
 export default class ActionsBase {
   constructor (key) {
     this.fetch = this.fetch.bind(this)

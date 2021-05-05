@@ -8,8 +8,12 @@ import RestaurantAction from 'crud/modules/Restaurant/RestaurantAction'
 // selector
 import RestaurantSelector from 'crud/modules/Restaurant/RestaurantSelector'
 
-// service vase
+// service base
 import SeriveBase from 'crud/ServiceBase'
+
+/**
+ * Service for restaurant
+ */
 class RestaurantService extends SeriveBase {
   getInitialState () {
     return {

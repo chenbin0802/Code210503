@@ -7,6 +7,7 @@ function setTopLevelNavigator (navigatorRef) {
   _navigator = navigatorRef
 }
 
+// navigate to route
 function navigate (routeName, params) {
   _navigator.dispatch(
     NavigationActions.navigate({
@@ -16,6 +17,7 @@ function navigate (routeName, params) {
   )
 }
 
+// back
 function goBack () {
   _navigator.dispatch(
     NavigationActions.back()
