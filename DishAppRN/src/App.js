@@ -13,11 +13,11 @@ import RestaurantDetails from 'screens/Restaurant/RestaurantDetails'
 
 const AppNavigator = createStackNavigator(
   {
-    HomeScreen: Restaurant,
+    Restaurants: Restaurant,
     RestaurantDetails: RestaurantDetails
   },
   {
-    initialRouteName: 'HomeScreen'
+    initialRouteName: 'Restaurants'
   }
 )
 const AppContainer = createAppContainer(AppNavigator)

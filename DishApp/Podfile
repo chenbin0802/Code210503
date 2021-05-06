@@ -7,6 +7,7 @@ target 'DishApp' do
 
   # Pods for DishApp
   pod 'AFNetworking', '~> 4.0'
+  pod 'SDWebImage', '~> 5.10'
 
   target 'DishAppTests' do
     inherit! :search_paths

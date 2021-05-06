@@ -1,11 +1,15 @@
+//
+//  DataManager.swift
+//  DishApp
+//
+//  Created by Bin Chen on 2021-05-05.
+//
+
 import UIKit
 import AFNetworking
 
 class DataManager: NSObject {
-// MARK: Constants
     public static let shared = DataManager()
-
-// MARK: private
     private static let baseURL = "https://uk.api.just-eat.io"
     
     // keys
@@ -21,7 +25,6 @@ class DataManager: NSObject {
     // Error message
     private static let errorMessage = "fetch error"
     
-// MARK: public
     public func fetchRestaurant(with outCode: String, success: @escaping ([Restaurant]) -> Void, failure: @escaping (String) -> Void) {
         
         let successHandler: (URLSessionDataTask, Any?) -> Void = { task, response in
@@ -30,11 +33,7 @@ class DataManager: NSObject {
                 failure(DataManager.errorMessage)
                 return
             }
-        
-            
-            // TODO: This is a hack, serializing the dict back to json and use JSONDecoder to decode it to object
-            // will have nagative performance impact. This CANNOT go into production code. Given more time I would
-            // properly deserialize it from the Json dict.
+
             do {
                 let decodedList = try JSONDecoder().decode([Restaurant].self,
                                                            from: try JSONSerialization.data(withJSONObject: restaurantsSection, options: .fragmentsAllowed))

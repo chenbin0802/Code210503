@@ -1,4 +1,12 @@
+//
+//  RestaurantListViewController.swift
+//  DishApp
+//
+//  Created by Bin Chen on 2021-05-05.
+//
+
 import UIKit
+import SDWebImage
 
 class RestaurantListViewController: UIViewController {
 
@@ -9,19 +17,21 @@ class RestaurantListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Restaurant"
+        title = "Restaurants"
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        let cellNib = UINib(nibName: "RestaurantCell", bundle: nil)
+        tableView.register(cellNib, forCellReuseIdentifier: "RestaurantCell")
     }
+
 }
 
 
 extension RestaurantListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let input = searchBar.text, input.count > 0 else {
-            let alert = UIAlertController.init(title: "Oops",
-                                               message: "Please input something",
+            let alert = UIAlertController.init(title: "", message: "Please Enter Postal Code",
                                                preferredStyle: .alert)
             alert.addAction(UIAlertAction.init(title: "OK",
                                                style: .default,
@@ -53,16 +63,26 @@ extension RestaurantListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellID = "RestaurantListViewControllerTableViewCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) ?? UITableViewCell.init(style: .default, reuseIdentifier: cellID)
-                
-        cell.textLabel?.text = restaurants[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
+        cell.iconView.sd_setImage(with: URL(string: restaurants[indexPath.row].logoUrl))
+        cell.contentLabel.text = String(format: "%@\nCount:%d  Average:%.2f  StarRating:%.2f\nCuisines:\n\n %@",
+                                        restaurants[indexPath.row].name,
+                                        restaurants[indexPath.row].numberOfRatings,
+                                        restaurants[indexPath.row].ratingAverage,
+                                        restaurants[indexPath.row].ratingStars,
+                                        restaurants[indexPath.row].isOpenNow ? "Open Now" : "Closed")
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
 }
 
 extension RestaurantListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // TODO
+        let vc = RestaurantDetails.init()
+        vc.restaurant = restaurants[indexPath.row]
+        self.present(vc, animated: true)
     }
 }

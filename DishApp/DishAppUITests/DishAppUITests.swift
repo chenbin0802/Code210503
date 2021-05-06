@@ -1,3 +1,10 @@
+//
+//  DishAppUITests.swift
+//  DishApp
+//
+//  Created by Bin Chen on 2021-05-05.
+//
+
 import XCTest
 
 class DishAppUITests: XCTestCase {
