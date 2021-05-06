@@ -1,0 +1,806 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		011B563926424701001DD11C /* BootstrapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011B563826424701001DD11C /* BootstrapManager.swift */; };
+		013A294E2642464500553067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013A294D2642464500553067 /* AppDelegate.swift */; };
+		013A29522642464500553067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013A29512642464500553067 /* ViewController.swift */; };
+		013A29552642464500553067 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013A29532642464500553067 /* Main.storyboard */; };
+		013A29572642464500553067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 013A29562642464500553067 /* Assets.xcassets */; };
+		013A295A2642464500553067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 013A29582642464500553067 /* LaunchScreen.storyboard */; };
+		013A29652642464600553067 /* DishAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013A29642642464600553067 /* DishAppTests.swift */; };
+		013A29702642464600553067 /* DishAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 013A296F2642464600553067 /* DishAppUITests.swift */; };
+		01B01C9326424B8E009B376A /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B01C9226424B8E009B376A /* DataManager.swift */; };
+		01B01C9C264251CE009B376A /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B01C9B264251CE009B376A /* Restaurant.swift */; };
+		01B01CA1264251D8009B376A /* RestaurantList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B01CA0264251D8009B376A /* RestaurantList.swift */; };
+		01B01CAF26426473009B376A /* RestaurantListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01B01CAD26426473009B376A /* RestaurantListViewController.swift */; };
+		01B01CB026426473009B376A /* RestaurantListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01B01CAE26426473009B376A /* RestaurantListViewController.xib */; };
+		9FBA156DCEF0B2AB60D91E6F /* Pods_DishAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3015FEBC18BD661D12C35D0F /* Pods_DishAppTests.framework */; };
+		B602646EC8D0FB62A264ADE6 /* Pods_DishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751C0451E309E468F4A55291 /* Pods_DishApp.framework */; };
+		E398DB2D25D8C32B4AEA23A3 /* Pods_DishApp_DishAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 165280BD4E175406401A48D3 /* Pods_DishApp_DishAppUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		013A29612642464600553067 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013A29422642464500553067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 013A29492642464500553067;
+			remoteInfo = DishApp;
+		};
+		013A296C2642464600553067 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 013A29422642464500553067 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 013A29492642464500553067;
+			remoteInfo = DishApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		011B563826424701001DD11C /* BootstrapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapManager.swift; sourceTree = "<group>"; };
+		013A294A2642464500553067 /* DishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		013A294D2642464500553067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		013A29512642464500553067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		013A29542642464500553067 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		013A29562642464500553067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		013A29592642464500553067 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		013A295B2642464500553067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		013A29602642464600553067 /* DishAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		013A29642642464600553067 /* DishAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishAppTests.swift; sourceTree = "<group>"; };
+		013A29662642464600553067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		013A296B2642464600553067 /* DishAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DishAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		013A296F2642464600553067 /* DishAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishAppUITests.swift; sourceTree = "<group>"; };
+		013A29712642464600553067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01B01C9226424B8E009B376A /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		01B01C9B264251CE009B376A /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		01B01CA0264251D8009B376A /* RestaurantList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantList.swift; sourceTree = "<group>"; };
+		01B01CAD26426473009B376A /* RestaurantListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantListViewController.swift; sourceTree = "<group>"; };
+		01B01CAE26426473009B376A /* RestaurantListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantListViewController.xib; sourceTree = "<group>"; };
+		165280BD4E175406401A48D3 /* Pods_DishApp_DishAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DishApp_DishAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4185F138F8D24A8FBAF210 /* Pods-DishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishApp.release.xcconfig"; path = "Target Support Files/Pods-DishApp/Pods-DishApp.release.xcconfig"; sourceTree = "<group>"; };
+		3015FEBC18BD661D12C35D0F /* Pods_DishAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DishAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		751C0451E309E468F4A55291 /* Pods_DishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		94DEAEAD772F83335B675A7F /* Pods-DishAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishAppTests.release.xcconfig"; path = "Target Support Files/Pods-DishAppTests/Pods-DishAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3B638E3933C8F0359A5713E /* Pods-DishApp-DishAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishApp-DishAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-DishApp-DishAppUITests/Pods-DishApp-DishAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4A4EA0AD70B149EDFB2FB35 /* Pods-DishApp-DishAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishApp-DishAppUITests.release.xcconfig"; path = "Target Support Files/Pods-DishApp-DishAppUITests/Pods-DishApp-DishAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FC5E0FDB3FF500C22A3EB85E /* Pods-DishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishApp.debug.xcconfig"; path = "Target Support Files/Pods-DishApp/Pods-DishApp.debug.xcconfig"; sourceTree = "<group>"; };
+		FFF7A7BF6359DFD056A8660B /* Pods-DishAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DishAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DishAppTests/Pods-DishAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		013A29472642464500553067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B602646EC8D0FB62A264ADE6 /* Pods_DishApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013A295D2642464600553067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FBA156DCEF0B2AB60D91E6F /* Pods_DishAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013A29682642464600553067 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E398DB2D25D8C32B4AEA23A3 /* Pods_DishApp_DishAppUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		013A29412642464500553067 = {
+			isa = PBXGroup;
+			children = (
+				013A294C2642464500553067 /* DishApp */,
+				013A29632642464600553067 /* DishAppTests */,
+				013A296E2642464600553067 /* DishAppUITests */,
+				013A294B2642464500553067 /* Products */,
+				51667F6E61A5A1AD7949C211 /* Pods */,
+				49858F567FF52C5B76985E23 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		013A294B2642464500553067 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				013A294A2642464500553067 /* DishApp.app */,
+				013A29602642464600553067 /* DishAppTests.xctest */,
+				013A296B2642464600553067 /* DishAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		013A294C2642464500553067 /* DishApp */ = {
+			isa = PBXGroup;
+			children = (
+				01B01C9726424B92009B376A /* Models */,
+				01B01C8F26424AC1009B376A /* Screens */,
+				01B01C8E26424AB9009B376A /* DataManager */,
+				013A294D2642464500553067 /* AppDelegate.swift */,
+				011B563826424701001DD11C /* BootstrapManager.swift */,
+				013A29512642464500553067 /* ViewController.swift */,
+				013A29532642464500553067 /* Main.storyboard */,
+				013A29562642464500553067 /* Assets.xcassets */,
+				013A29582642464500553067 /* LaunchScreen.storyboard */,
+				013A295B2642464500553067 /* Info.plist */,
+			);
+			path = DishApp;
+			sourceTree = "<group>";
+		};
+		013A29632642464600553067 /* DishAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				013A29642642464600553067 /* DishAppTests.swift */,
+				013A29662642464600553067 /* Info.plist */,
+			);
+			path = DishAppTests;
+			sourceTree = "<group>";
+		};
+		013A296E2642464600553067 /* DishAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				013A296F2642464600553067 /* DishAppUITests.swift */,
+				013A29712642464600553067 /* Info.plist */,
+			);
+			path = DishAppUITests;
+			sourceTree = "<group>";
+		};
+		01B01C8E26424AB9009B376A /* DataManager */ = {
+			isa = PBXGroup;
+			children = (
+				01B01C9226424B8E009B376A /* DataManager.swift */,
+			);
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		01B01C8F26424AC1009B376A /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				01B01C9126424AE3009B376A /* RestaurantDetail */,
+				01B01C9026424AC8009B376A /* RestaurantList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		01B01C9026424AC8009B376A /* RestaurantList */ = {
+			isa = PBXGroup;
+			children = (
+				01B01CAD26426473009B376A /* RestaurantListViewController.swift */,
+				01B01CAE26426473009B376A /* RestaurantListViewController.xib */,
+			);
+			path = RestaurantList;
+			sourceTree = "<group>";
+		};
+		01B01C9126424AE3009B376A /* RestaurantDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RestaurantDetail;
+			sourceTree = "<group>";
+		};
+		01B01C9726424B92009B376A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				01B01C9B264251CE009B376A /* Restaurant.swift */,
+				01B01CA0264251D8009B376A /* RestaurantList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		49858F567FF52C5B76985E23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				751C0451E309E468F4A55291 /* Pods_DishApp.framework */,
+				165280BD4E175406401A48D3 /* Pods_DishApp_DishAppUITests.framework */,
+				3015FEBC18BD661D12C35D0F /* Pods_DishAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51667F6E61A5A1AD7949C211 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC5E0FDB3FF500C22A3EB85E /* Pods-DishApp.debug.xcconfig */,
+				2B4185F138F8D24A8FBAF210 /* Pods-DishApp.release.xcconfig */,
+				C3B638E3933C8F0359A5713E /* Pods-DishApp-DishAppUITests.debug.xcconfig */,
+				C4A4EA0AD70B149EDFB2FB35 /* Pods-DishApp-DishAppUITests.release.xcconfig */,
+				FFF7A7BF6359DFD056A8660B /* Pods-DishAppTests.debug.xcconfig */,
+				94DEAEAD772F83335B675A7F /* Pods-DishAppTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		013A29492642464500553067 /* DishApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 013A29742642464600553067 /* Build configuration list for PBXNativeTarget "DishApp" */;
+			buildPhases = (
+				E05CC3925564405E9A4702EF /* [CP] Check Pods Manifest.lock */,
+				013A29462642464500553067 /* Sources */,
+				013A29472642464500553067 /* Frameworks */,
+				013A29482642464500553067 /* Resources */,
+				07BE06F116834B7A1CE5EF81 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DishApp;
+			productName = DishApp;
+			productReference = 013A294A2642464500553067 /* DishApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		013A295F2642464600553067 /* DishAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 013A29772642464600553067 /* Build configuration list for PBXNativeTarget "DishAppTests" */;
+			buildPhases = (
+				33FE6EA5E2C20964B1BD248A /* [CP] Check Pods Manifest.lock */,
+				013A295C2642464600553067 /* Sources */,
+				013A295D2642464600553067 /* Frameworks */,
+				013A295E2642464600553067 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				013A29622642464600553067 /* PBXTargetDependency */,
+			);
+			name = DishAppTests;
+			productName = DishAppTests;
+			productReference = 013A29602642464600553067 /* DishAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		013A296A2642464600553067 /* DishAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 013A297A2642464600553067 /* Build configuration list for PBXNativeTarget "DishAppUITests" */;
+			buildPhases = (
+				4814DC0A7898E4D6C1EB77C0 /* [CP] Check Pods Manifest.lock */,
+				013A29672642464600553067 /* Sources */,
+				013A29682642464600553067 /* Frameworks */,
+				013A29692642464600553067 /* Resources */,
+				2DE2A1C0F85C75574BB2C405 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				013A296D2642464600553067 /* PBXTargetDependency */,
+			);
+			name = DishAppUITests;
+			productName = DishAppUITests;
+			productReference = 013A296B2642464600553067 /* DishAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		013A29422642464500553067 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					013A29492642464500553067 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					013A295F2642464600553067 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 013A29492642464500553067;
+					};
+					013A296A2642464600553067 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = 013A29492642464500553067;
+					};
+				};
+			};
+			buildConfigurationList = 013A29452642464500553067 /* Build configuration list for PBXProject "DishApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 013A29412642464500553067;
+			productRefGroup = 013A294B2642464500553067 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				013A29492642464500553067 /* DishApp */,
+				013A295F2642464600553067 /* DishAppTests */,
+				013A296A2642464600553067 /* DishAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		013A29482642464500553067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				013A295A2642464500553067 /* LaunchScreen.storyboard in Resources */,
+				013A29572642464500553067 /* Assets.xcassets in Resources */,
+				01B01CB026426473009B376A /* RestaurantListViewController.xib in Resources */,
+				013A29552642464500553067 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013A295E2642464600553067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013A29692642464600553067 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07BE06F116834B7A1CE5EF81 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DishApp/Pods-DishApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DishApp/Pods-DishApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DishApp/Pods-DishApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2DE2A1C0F85C75574BB2C405 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DishApp-DishAppUITests/Pods-DishApp-DishAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DishApp-DishAppUITests/Pods-DishApp-DishAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DishApp-DishAppUITests/Pods-DishApp-DishAppUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33FE6EA5E2C20964B1BD248A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DishAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4814DC0A7898E4D6C1EB77C0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DishApp-DishAppUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E05CC3925564405E9A4702EF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DishApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		013A29462642464500553067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01B01CA1264251D8009B376A /* RestaurantList.swift in Sources */,
+				01B01C9C264251CE009B376A /* Restaurant.swift in Sources */,
+				013A29522642464500553067 /* ViewController.swift in Sources */,
+				01B01CAF26426473009B376A /* RestaurantListViewController.swift in Sources */,
+				01B01C9326424B8E009B376A /* DataManager.swift in Sources */,
+				013A294E2642464500553067 /* AppDelegate.swift in Sources */,
+				011B563926424701001DD11C /* BootstrapManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013A295C2642464600553067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				013A29652642464600553067 /* DishAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		013A29672642464600553067 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				013A29702642464600553067 /* DishAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		013A29622642464600553067 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 013A29492642464500553067 /* DishApp */;
+			targetProxy = 013A29612642464600553067 /* PBXContainerItemProxy */;
+		};
+		013A296D2642464600553067 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 013A29492642464500553067 /* DishApp */;
+			targetProxy = 013A296C2642464600553067 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		013A29532642464500553067 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				013A29542642464500553067 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		013A29582642464500553067 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				013A29592642464500553067 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		013A29722642464600553067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		013A29732642464600553067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		013A29752642464600553067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC5E0FDB3FF500C22A3EB85E /* Pods-DishApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DishApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skip.DishApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		013A29762642464600553067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B4185F138F8D24A8FBAF210 /* Pods-DishApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DishApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skip.DishApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		013A29782642464600553067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FFF7A7BF6359DFD056A8660B /* Pods-DishAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DishAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skip.DishAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishApp.app/DishApp";
+			};
+			name = Debug;
+		};
+		013A29792642464600553067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 94DEAEAD772F83335B675A7F /* Pods-DishAppTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DishAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skip.DishAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DishApp.app/DishApp";
+			};
+			name = Release;
+		};
+		013A297B2642464600553067 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3B638E3933C8F0359A5713E /* Pods-DishApp-DishAppUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DishAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skip.DishAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DishApp;
+			};
+			name = Debug;
+		};
+		013A297C2642464600553067 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C4A4EA0AD70B149EDFB2FB35 /* Pods-DishApp-DishAppUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = DishAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.skip.DishAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DishApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		013A29452642464500553067 /* Build configuration list for PBXProject "DishApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013A29722642464600553067 /* Debug */,
+				013A29732642464600553067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		013A29742642464600553067 /* Build configuration list for PBXNativeTarget "DishApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013A29752642464600553067 /* Debug */,
+				013A29762642464600553067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		013A29772642464600553067 /* Build configuration list for PBXNativeTarget "DishAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013A29782642464600553067 /* Debug */,
+				013A29792642464600553067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		013A297A2642464600553067 /* Build configuration list for PBXNativeTarget "DishAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				013A297B2642464600553067 /* Debug */,
+				013A297C2642464600553067 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 013A29422642464500553067 /* Project object */;
+}
