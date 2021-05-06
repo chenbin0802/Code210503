@@ -2,10 +2,9 @@
 This is the Technical Challenge.<br>
 Includes React-Native and Native iOS projects.
 
-## Screens preview:<br>
-<br>
-![image](https://user-images.githubusercontent.com/83605914/117225213-6cced400-add7-11eb-8fdf-ddaf18eb0eb6.gif)
-
+## Screens preview:
+![ScreenShot](https://raw.githubusercontent.com/chenbin0802/Code210503/main/gif/ios.gif)
+![image](https://raw.githubusercontent.com/chenbin0802/Code210503/main/gif/rn.gif)
 <br>
 
 ## Folder structure:<br>
