@@ -4,6 +4,7 @@ Includes React-Native and Native iOS projects.
 
 ## Screens preview:<br>
 <br>
+![Screen Recording 2021-05-05 at 7 19 01 PM](https://user-images.githubusercontent.com/83605914/117225213-6cced400-add7-11eb-8fdf-ddaf18eb0eb6.gif)
 
 <br>
 
