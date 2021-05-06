@@ -14,13 +14,15 @@ class RestaurantListViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     
     private var restaurants: [Restaurant] = []
-    
+    private static let rowHeight: CGFloat = 100
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Restaurants"
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.keyboardDismissMode = .onDrag
         let cellNib = UINib(nibName: "RestaurantCell", bundle: nil)
         tableView.register(cellNib, forCellReuseIdentifier: "RestaurantCell")
     }
@@ -30,6 +32,7 @@ class RestaurantListViewController: UIViewController {
 
 extension RestaurantListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         guard let input = searchBar.text, input.count > 0 else {
             let alert = UIAlertController.init(title: "", message: "Please Enter Postal Code",
                                                preferredStyle: .alert)
@@ -40,7 +43,7 @@ extension RestaurantListViewController: UISearchBarDelegate {
             return
         }
         
-        DataManager.shared.fetchRestaurant(with: input) { [weak self] restaurants in
+        DataManager.shared.fetchRestaurant(with: input.trimmingCharacters(in: .whitespaces)) { [weak self] restaurants in
             self?.restaurants = restaurants
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
@@ -64,25 +67,29 @@ extension RestaurantListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantCell", for: indexPath) as! RestaurantCell
-        cell.iconView.sd_setImage(with: URL(string: restaurants[indexPath.row].logoUrl))
-        cell.contentLabel.text = String(format: "%@\nCount:%d  Average:%.2f  StarRating:%.2f\nCuisines:\n\n %@",
-                                        restaurants[indexPath.row].name,
-                                        restaurants[indexPath.row].numberOfRatings,
-                                        restaurants[indexPath.row].ratingAverage,
-                                        restaurants[indexPath.row].ratingStars,
-                                        restaurants[indexPath.row].isOpenNow ? "Open Now" : "Closed")
+        let restaurant = restaurants[indexPath.row]
+        cell.iconView.sd_setImage(with: URL(string: restaurant.logoUrl))
+        cell.contentLabel.text = String(format: "%@\nCount:%d  Average:%.2f  StarRating:%.2f\nCuisines:\n%@\n %@",
+                                        restaurant.name,
+                                        restaurant.numberOfRatings,
+                                        restaurant.ratingAverage,
+                                        restaurant.ratingStars,
+                                        restaurant.cuisineTypes.reduce("", { result, type in
+                                            result + " | "  + type.name
+                                        }),
+                                        restaurant.isOpenNow ? "Open Now" : "Closed")
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return RestaurantListViewController.rowHeight
     }
 }
 
 extension RestaurantListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = RestaurantDetails.init()
-        vc.restaurant = restaurants[indexPath.row]
-        self.present(vc, animated: true)
+        let restaurant = restaurants[indexPath.row]
+        let vc = RestaurantDetails.init(restaurant: restaurant)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -23,14 +23,15 @@ class DataManager: NSObject {
     private let decode = JSONDecoder()
     
     // Error message
-    private static let errorMessage = "fetch error"
-    
+    private static let errorGetMessage = "http error:"
+    private static let errorDecodeMessage = "decode error:"
+
     public func fetchRestaurant(with outCode: String, success: @escaping ([Restaurant]) -> Void, failure: @escaping (String) -> Void) {
         
         let successHandler: (URLSessionDataTask, Any?) -> Void = { task, response in
             guard let dict = response as? Dictionary<String, AnyObject>,
                   let restaurantsSection = dict[DataManager.restaurantsKey] else {
-                failure(DataManager.errorMessage)
+                failure(DataManager.errorDecodeMessage + " restaurants doesn't exist.")
                 return
             }
 
@@ -40,12 +41,12 @@ class DataManager: NSObject {
                 success(decodedList)
                 return
             } catch {
-                failure(DataManager.errorMessage)
+                failure(DataManager.errorDecodeMessage + error.localizedDescription)
             }
         }
         
         let failureHandler: (URLSessionDataTask?, Error) -> Void = { task, error in
-            failure(DataManager.errorMessage)
+            failure(DataManager.errorGetMessage+error.localizedDescription)
         }
         
         networkManager.get(DataManager.searchURL + outCode,
@@ -55,4 +56,5 @@ class DataManager: NSObject {
                            success: successHandler,
                            failure: failureHandler)
     }
+    
 }

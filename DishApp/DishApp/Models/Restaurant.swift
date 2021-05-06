@@ -4,6 +4,36 @@
 //
 //  Created by Bin Chen on 2021-05-05.
 //
+struct CuisineType: Codable {
+    let name: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case name = "Name"
+    }
+}
+
+struct Address: Codable {
+    let city: String
+    let firstLine: String
+    let postCode: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case city = "City"
+        case firstLine = "FirstLine"
+        case postCode = "Postcode"
+    }
+}
+
+struct DeliveryEtaMinutes: Codable {
+    let rangeLower: Int?
+    let rangeUpper: Int?
+    
+    private enum CodingKeys: String, CodingKey {
+        case rangeLower = "RangeLower"
+        case rangeUpper = "RangeUpper"
+    }
+}
+
 
 struct Restaurant: Codable {
     let name: String
@@ -19,11 +49,10 @@ struct Restaurant: Codable {
     let ratingAverage: Float
     let openingTimeLocal: String
     let deliveryStartTime: String
-//    .deliveryEtaMinutes.RangeLower,
-//    .deliveryEtaMinutes.RangeUpper,
-//    let CuisineTypes
-//    let Address
-    
+    let cuisineTypes: [CuisineType]
+    let address: Address
+    let deliveryEtaMinutes: DeliveryEtaMinutes?
+
     private enum CodingKeys: String, CodingKey {
         case name = "Name"
         case city = "City"
@@ -38,7 +67,10 @@ struct Restaurant: Codable {
         case ratingAverage = "RatingAverage"
         case openingTimeLocal = "OpeningTimeLocal"
         case deliveryStartTime = "DeliveryStartTime"
-//        case CuisineTypes
-        //    let Address
+        case cuisineTypes = "CuisineTypes"
+        case address = "Address"
+        case deliveryEtaMinutes = "DeliveryEtaMinutes"
     }
+    
+
 }

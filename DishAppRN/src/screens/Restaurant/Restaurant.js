@@ -28,15 +28,11 @@ class Restaurant extends Component {
 
   static getDerivedStateFromProps (props, prevState) {
     if( prevState.isLoading != props.restaurantdata?.isLoading){
-      if(props.restaurantdata?.isLoading){
-        return {
-          isLoading: true,
-        }
-      }else{
-        return {
-          isLoading: false,
-          message: props.restaurantdata?.Restaurants?.length > 0 ? '' : 'No results found'
-        }
+      const isLoading = props.restaurantdata?.isLoading
+      const message = !isLoading && props.restaurantdata?.Restaurants?.length > 0 ? '' : 'No results found'
+      return {
+        isLoading,
+        message,
       }
     }
 
@@ -47,7 +43,6 @@ class Restaurant extends Component {
     return (
       <View style={styles.container}>
         {this.renderSearch()}
-        {this.renderButton()}
         {this.renderList()}
       </View>
     )
@@ -58,18 +53,6 @@ class Restaurant extends Component {
     return (<View style={styles.emptyItem}>
     <Text>{message}</Text>
   </View>)
-  }
-
-  renderButton = () => {
-    const { restaurantdata } = this.props
-    if(restaurantdata?.isLoading){
-      return <ActivityIndicator />
-    }else{
-      return (<Button
-      title="Search"
-      onPress={this.onButtonPressed}
-    />)
-    }
   }
 
   renderItem = ({ item }) => {
@@ -95,7 +78,7 @@ class Restaurant extends Component {
     const { isLoading } = this.state
     const { restaurantdata } = this.props
     if(isLoading){
-      return null
+      return <ActivityIndicator />
     }
     return <FlatList
       data={restaurantdata?.Restaurants}
@@ -110,16 +93,20 @@ class Restaurant extends Component {
       style={styles.input}
       onChangeText={text => this.onChangeText(text)}
       maxLength={20}
-      placeholder={"Please enter Postal Code"} />;
+      placeholder={"Please enter Postal Code"}
+      onSubmitEditing={this.onSubmit}
+      returnKeyType={'search'}
+    />
   }
 
   onItemPress = (itemId) => {
     NavigationService.navigate('RestaurantDetails', { itemId: itemId });
   }
 
-  onButtonPressed = () => {
-    if(this.searchText.length > 0){
-      this.props.searchByPostalCode(this.searchText)
+  onSubmit = () => {
+    const trimedText = this.searchText.trim()
+    if(trimedText.length > 0){
+      this.props.searchByPostalCode(trimedText)
     }else{
       Alert.alert("Please Enter Postal Code");
     }
